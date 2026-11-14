@@ -1,13 +1,6 @@
-# DR DETAILZ Website
+# DR DETAILZ cinematic homepage update
+Upload `index.html`, `drdetailz-logo.jpg`, and `hero.mp4` directly to the root of your GitHub repository. Replace the existing `index.html`. Vercel should deploy automatically.
 
-Static, mobile-friendly starter website for DR DETAILZ. Deploy to Vercel as **Other** framework, root directory `./`, no build command needed.
+This is a static starter site. The quote form opens the visitor's email application; it does not automatically submit. The membership link is also email-based. Before promoting the website, add secure server-side form handling, SMS/email notifications, complete translations, approved policies and real gallery assets.
 
-## Before launch
-- Replace text-only logo placeholder with the official approved logo asset.
-- Add licensed/owned vehicle images and project gallery.
-- Connect a secure server-side quote form endpoint and email/SMS notifications. Current quote form opens the visitor's email application; it does not send automatically.
-- Connect membership waitlist to a database or form service.
-- Review and approve all policies, services and prices.
-- Test mobile layout, bilingual copy and accessibility.
-
-Do not publish API keys or other secrets in this repository.
+The hero video was optimized from user-supplied footage and plays muted, looping and inline. No API keys are included.
