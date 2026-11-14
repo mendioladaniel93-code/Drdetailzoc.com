@@ -1,6 +1,12 @@
-# DR DETAILZ cinematic homepage update
-Upload `index.html`, `drdetailz-logo.jpg`, and `hero.mp4` directly to the root of your GitHub repository. Replace the existing `index.html`. Vercel should deploy automatically.
+# DR DETAILZ Quote Form Update
 
-This is a static starter site. The quote form opens the visitor's email application; it does not automatically submit. The membership link is also email-based. Before promoting the website, add secure server-side form handling, SMS/email notifications, complete translations, approved policies and real gallery assets.
+Upload `index.html`, `hero.mp4`, `drdetailz-logo.jpg` and the `api/quote.js` file, preserving the `api` folder, to the repository root. Vercel should use Framework Preset **Other**.
 
-The hero video was optimized from user-supplied footage and plays muted, looping and inline. No API keys are included.
+## IMPORTANT: The form will not deliver inquiries until configured
+
+1. Create a Resend account, verify a sending domain, and create an API key.
+2. In Vercel Project > Settings > Environment Variables add `RESEND_API_KEY` and `QUOTE_FROM_EMAIL` (example: `DR DETAILZ <quotes@your-verified-domain.com>`). Do not put credentials in GitHub files.
+3. Redeploy and submit a test request. Confirm delivery to drdetailzoc@gmail.com.
+4. Optional SMS: create a Twilio account and add `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_FROM_NUMBER` to Vercel. Verify sender permissions and registration requirements. Redeploy and test. SMS errors are logged, not shown to customer.
+
+Note: This starter uses no database, CAPTCHA, or rate limiting. Add spam protection and privacy policy before broad public promotion. The quote form is NOT a booking confirmation.
