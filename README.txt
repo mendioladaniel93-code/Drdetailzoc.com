@@ -1,0 +1,2 @@
+DR DETAILZ multipage site
+Upload all six HTML files to the root of your existing GitHub repository. Keep your existing drdetailz-logo.jpg and video files in the same root directory. Do not delete your existing media or /api/quote backend. Vercel should redeploy when GitHub changes are committed. Test videos and quote submissions on the live site. MOV videos may not play in all browsers; MP4 (H.264) is recommended.
