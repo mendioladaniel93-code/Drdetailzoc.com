@@ -69,7 +69,9 @@ document.getElementById('lang').addEventListener('click',function(){let es=this.
   const newNames=["IMG_1566.jpeg","IMG_1567.jpeg","IMG_1571.jpeg","IMG_1572.jpeg","IMG_1573.jpeg","IMG_1662.jpeg","IMG_1663.jpeg","IMG_1717.jpeg","IMG_2472.jpeg","IMG_3243.jpeg","IMG_3247.jpeg","IMG_4065.jpeg","IMG_4477.jpeg","IMG_5491.jpeg","IMG_6129.jpeg","IMG_7190.jpeg","IMG_7976.jpeg","IMG_8728.jpeg","IMG_9432.jpeg","IMG_9441.jpeg"];
   const tracks=[...document.querySelectorAll('[data-photo-track]')];
   if(!tracks.length)return;
-  let photos=[...existing,...newNames];
+  const excludedPositions=new Set([31,34,35]);
+  const omitSelectedPositions=items=>items.filter((_,i)=>!excludedPositions.has(i+1));
+  let photos=omitSelectedPositions([...existing,...newNames]);
   let active=0,previousFocus=null;
   const modal=document.getElementById('photo-lightbox');
   const modalImage=modal.querySelector('img');
@@ -117,7 +119,7 @@ document.getElementById('lang').addEventListener('click',function(){let es=this.
     .then(results=>{
       const discovered=[];
       results.forEach((files,i)=>{if(!Array.isArray(files))return;files.forEach(f=>{if(f.type==='file'&&/\.(jpe?g|png|webp|avif)$/i.test(f.name)&&!/^drdetailz-logo/i.test(f.name)&&!/^card-/i.test(f.name))discovered.push((i?'gallery-images/':'')+f.name);});});
-      if(discovered.length){photos=[...new Set([...existing,...newNames,...discovered])];render();}
+      if(discovered.length){photos=omitSelectedPositions([...new Set([...existing,...newNames,...discovered])]);render();}
     });
 })();
 </script>
